@@ -1,0 +1,35 @@
+@import "../../../styles/helpers.scss";
+
+section.title {
+  @include center;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+
+  .title-wrapper {
+    text-align: center;
+    margin: 60px auto 60px auto;
+
+    h1 {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.15rem;
+      line-height: 3rem;
+    }
+
+    h2 {
+      color: $main-red;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.6rem;
+      line-height: 3.2rem;
+    }
+  }
+
+  .line {
+    background-color: $line-grey;
+    height: 2px;
+    width: 100%;
+  }
+}

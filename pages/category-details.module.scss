@@ -1,0 +1,5 @@
+@import '../styles/helpers.scss';
+
+main.category-details-page {
+    @include page-config;
+}

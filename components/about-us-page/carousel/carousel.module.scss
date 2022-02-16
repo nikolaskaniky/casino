@@ -1,0 +1,122 @@
+@import "../../../styles/helpers.scss";
+
+section.carousel {
+  margin: 40px 0;
+
+  .wrapper {
+    max-width: 840px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .embla {
+    height: 420px;
+    width: 100%;
+    cursor: grab;
+  }
+
+  .viewport {
+    max-width: 700px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 14px;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .embla__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .navigation {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #a3a3a3;
+      border-radius: 50%;
+      transition: 0.4s ease all;
+
+      &.active {
+        background-color: $main-orange;
+        width: 40px;
+        border-radius: 8px;
+        transition: 0.4s ease width;
+      }
+    }
+  }
+
+  .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    @include center;
+    cursor: pointer;
+
+    svg {
+        color: black;
+        width: 20px;
+        height: 20px;
+    }
+  }
+
+  .next {
+      right: 0;
+    svg {
+        margin-right: -4px;
+    }
+    }
+
+  .prev {
+      left: 0;
+      svg {
+        margin-left: -4px;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  section.carousel {
+    .button {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  section.carousel {
+    .embla {
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  section.carousel {
+    .embla {
+      height: 200px;
+    }
+  }
+}

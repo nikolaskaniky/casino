@@ -1,0 +1,35 @@
+.embla {
+  position: relative;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+  background-color: white;
+  cursor: grab;
+
+  .image-container {
+    position: relative;
+  }
+}
+
+.navigation {
+  display: flex;
+
+  .dot {
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: red;
+  }
+}

@@ -1,0 +1,221 @@
+@import "../../../styles/helpers.scss";
+
+.hero {
+  margin-top: 86px;
+
+  .wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .embla {
+    height: 340px;
+    width: 100%;
+    cursor: grab;
+  }
+
+  .viewport {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .embla__slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    justify-items: center;
+    align-items: center;
+    column-gap: 40px;
+
+    .presentation {
+      user-select: none;
+      text-align: end;
+      h1 {
+        &:nth-child(1) {
+          font-size: 50px;
+          font-weight: normal;
+          letter-spacing: 5px;
+          color: $main-orange;
+          line-height: 1;
+        }
+
+        &:nth-child(2) {
+          font-size: 80px;
+          font-weight: bold;
+          color: #fff;
+          line-height: 1;
+          padding-top: 4px;
+        }
+
+        &:nth-child(3) {
+          font-size: 100px;
+          font-weight: bold;
+          color: #fff;
+          padding-top: 8px;
+          line-height: 1;
+          position: relative;
+          display: inline-block;
+
+          .line {
+            background-color: $main-red;
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            bottom: 4px;
+            left: 0;
+            z-index: -1;
+          }
+        }
+      }
+    }
+
+    .image {
+      width: 100%;
+
+      .image-wrapper {
+        max-width: 740px;
+        width: 100%;
+        position: relative;
+        height: 250px;
+      }
+    }
+  }
+}
+
+.navigation {
+  justify-content: flex-end;
+  margin-top: 40px;
+
+  .dot {
+    width: 41px;
+    height: 41px;
+    margin: 0 20px;
+    padding: 6px 15px 6px 16px;
+    border: solid 1px #bebebe;
+    @include center;
+    transition: 0.2s ease all;
+
+    &.active {
+      background-color: $main-red;
+      border: none;
+    }
+
+    &:hover {
+      background-color: $main-red;
+      border: none;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    margin-top: 40px;
+
+    .embla {
+      height: auto;
+    }
+
+    .embla__slide {
+      grid-template-columns: 1fr;
+
+      .presentation {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 20px;
+        justify-items: center;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h1 {
+          &:nth-child(1) {
+            font-size: 2.6rem;
+            font-weight: normal;
+            letter-spacing: 5px;
+            color: $main-orange;
+            line-height: 1;
+          }
+  
+          &:nth-child(2) {
+            font-size: 2.6rem;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1;
+            padding-top: 4px;
+          }
+  
+          &:nth-child(3) {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #fff;
+            padding-top: 8px;
+            line-height: 1;
+            position: relative;
+            display: inline-flex;
+            grid-column: 1 / 3;
+  
+            .line {
+              background-color: $main-red;
+              display: inline-block;
+              position: absolute;
+              width: 100%;
+              height: 12px;
+              bottom: 6px;
+              left: 0;
+              z-index: -1;
+            }
+          }
+        }
+      }
+
+      .image {
+        @include center;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .hero {
+    .embla__slide {
+      .image {
+        .image-wrapper {
+          height: 200px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .hero {
+    .embla__slide {
+      .presentation {
+        grid-template-columns: auto;
+        h1 {
+          &:nth-child(3) {
+            grid-column: 1 / 2;
+            font-size: 3.4rem;
+          }
+        }
+      }
+
+      .image {
+        .image-wrapper {
+          height: 160px;
+        }
+      }
+    }
+  }
+
+  .navigation {
+    justify-content: center;
+  }
+}

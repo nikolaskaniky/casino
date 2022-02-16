@@ -1,0 +1,18 @@
+$main-orange: #ff4d2c;
+$open-green: #3cff6d;
+$close-red: rgb(255, 38, 9);
+$main-red: #ef0606;
+$line-grey: #525252;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin page-config {
+  max-width: 1366px;
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
+}

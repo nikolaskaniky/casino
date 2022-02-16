@@ -1,0 +1,5 @@
+@import "../styles/helpers.scss";
+
+main.home-page {
+  @include page-config;
+}
