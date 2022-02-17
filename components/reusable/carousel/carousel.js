@@ -28,17 +28,14 @@ const Carousel = (props) => {
 
   const autoplay = useRef(
     Autoplay(
-      { delay: 8000, stopOnInteraction: false },
+      { delay: 4000, stopOnInteraction: false },
       (emblaRoot) => emblaRoot.parentElement
     )
   );
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true }
-    //     [
-    //     autoplay.current,
-    //   ]
-  );
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 6 }, [
+    autoplay.current,
+  ]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
