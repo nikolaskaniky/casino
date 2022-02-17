@@ -36,7 +36,7 @@ const Footer = () => {
                 <BsFacebook className={classes["fb-svg"]} />
               </a>
             </Link>
-            <Link href="https://api.whatsapp.com/send?phone=+40721205710">
+            <Link href="https://api.whatsapp.com/send?phone=+40722753527">
               <a>
                 <IoLogoWhatsapp className={classes["wp-svg"]} />
               </a>

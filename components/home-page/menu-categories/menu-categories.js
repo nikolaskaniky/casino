@@ -2,8 +2,11 @@ import React from "react";
 import Image from "next/image";
 import { categoriesData } from "../../../data/categories-data";
 import classes from "./menu-categories.module.scss";
+import { useRouter } from "next/router";
 
 const MenuCategories = () => {
+  const router = useRouter();
+
   return (
     <section className={classes["menu-categories"]}>
       <div className={classes.title}>
@@ -14,7 +17,9 @@ const MenuCategories = () => {
 
       <ul className={classes.cards}>
         {categoriesData.map((item, index) => (
-          <li className={classes.card} key={index}>
+          <li className={classes.card} key={index}
+            onClick={() => router.push(`${item.linkTo}`)}
+          >
             <div
               className={classes.image}
               style={{
