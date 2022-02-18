@@ -43,7 +43,7 @@ const NavbarMedia = (props) => {
           currentRoute === '/about-us' ? classes.active : undefined
         }`}
         >
-          <p>ABOUT US</p>
+          <p>DESPRE NOI</p>
           <div className={classes.line}></div>
         </li>
 
@@ -66,7 +66,7 @@ const NavbarMedia = (props) => {
       </ul>
 
       <div className={classes.orar}>
-        <Orar />
+        <Orar orarContentStyle={classes['orar-extra']} />
       </div>
 
       <div className={classes.social}>

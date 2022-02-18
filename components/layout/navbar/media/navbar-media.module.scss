@@ -8,9 +8,10 @@ section.media {
   width: 100%;
   height: 100%;
   display: none;
+  padding: 20px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1020px) {
   section.media {
     display: block;
     overflow-y: scroll;
@@ -46,7 +47,7 @@ section.media {
       border-top: 1px solid $line-grey;
 
       li {
-        font-size: 1rem;
+        font-size: 1srem;
         font-weight: normal;
         letter-spacing: 0.75px;
         color: white;
@@ -73,6 +74,12 @@ section.media {
     .orar {
       @include center;
       margin: 60px 0;
+    }
+
+    .orar-extra {
+      p {
+        font-size: 0.9rem;
+      }
     }
 
     .social {
@@ -126,7 +133,7 @@ section.media {
       .presentation {
         @include center;
         flex-direction: column;
-    
+
         .country {
           p {
             font-size: 1rem;

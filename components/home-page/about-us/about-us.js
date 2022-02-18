@@ -2,8 +2,11 @@ import React from "react";
 import Image from "next/image";
 import classes from "./about-us.module.scss";
 import aboutUs from "../../../assets/home-page/about-us/about-us.JPG";
+import { useRouter } from "next/router";
 
 const AboutUs = () => {
+  const router = useRouter();
+
   return (
     <section className={classes["about-us"]}>
       <div className={classes.title}>
@@ -17,7 +20,10 @@ const AboutUs = () => {
           <Image src={aboutUs} layout="fill" objectFit="cover" alt="img" />
         </div>
 
-        <div className={classes.button}>
+        <div
+          className={classes.button}
+          onClick={() => router.push("/about-us")}
+        >
           <p>VEZI MAI MULTE</p>
         </div>
       </div>

@@ -3,9 +3,12 @@ import { orarData } from "../../../data/orar-data";
 import classes from "./orar.module.scss";
 import { BsChevronDown } from "react-icons/bs";
 
-const Orar = () => {
+const Orar = (props) => {
+  const { orarContentStyle } = props;
+
   const date = new Date();
-  const day = date.getDay();
+  // const day = date.getDay();
+  let day = 0;
   const hour = date.getHours();
   const [isOpen, setIsOpen] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
@@ -42,7 +45,7 @@ const Orar = () => {
       {orarData.map((item, index) => (
         <Fragment key={index}>
           {index + 1 === day && (
-            <div className={classes["orar-content"]}>
+            <div className={`${classes["orar-content"]} ${orarContentStyle}`}>
               <p>{item.day}:</p>
               <p>{item.open} AM</p>
               <p>-</p>
@@ -51,7 +54,10 @@ const Orar = () => {
           )}
 
           {index === 6 && day === 0 && (
-            <div key={index} className={classes["orar-content"]}>
+            <div
+              key={index}
+              className={`${classes["orar-content"]} ${orarContentStyle}`}
+            >
               <p>{item.day}:</p>
               <p>{item.open} AM</p>
               <p>-</p>
