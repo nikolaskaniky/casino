@@ -7,8 +7,7 @@ const Orar = (props) => {
   const { orarContentStyle } = props;
 
   const date = new Date();
-  // const day = date.getDay();
-  let day = 0;
+  const day = date.getDay();
   const hour = date.getHours();
   const [isOpen, setIsOpen] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
