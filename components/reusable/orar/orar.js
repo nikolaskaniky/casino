@@ -27,7 +27,7 @@ const Orar = (props) => {
     } else {
       setIsOpen("Deschis");
     }
-  }, []);
+  }, [hour]);
 
   return (
     <div className={classes.orar} onClick={expandHandler}>
@@ -43,25 +43,15 @@ const Orar = (props) => {
 
       {orarData.map((item, index) => (
         <Fragment key={index}>
-          {index + 1 === day && (
+          {index + 1 === day || (index === 6 && day === 0) ? (
             <div className={`${classes["orar-content"]} ${orarContentStyle}`}>
               <p>{item.day}:</p>
               <p>{item.open} AM</p>
               <p>-</p>
               <p>{item.close} AM</p>
             </div>
-          )}
-
-          {index === 6 && day === 0 && (
-            <div
-              key={index}
-              className={`${classes["orar-content"]} ${orarContentStyle}`}
-            >
-              <p>{item.day}:</p>
-              <p>{item.open} AM</p>
-              <p>-</p>
-              <p>{item.close} AM</p>
-            </div>
+          ) : (
+            ""
           )}
         </Fragment>
       ))}
